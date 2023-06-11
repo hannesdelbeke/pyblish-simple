@@ -1,2 +1,1 @@
 Qt.py
-https://github.com/RedFalsh/PyQt5_stylesheets

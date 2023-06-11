@@ -4,7 +4,6 @@ import traceback
 
 import pyblish.util
 import pyblish.api
-import PyQt5_stylesheets
 
 
 class Ui_Form(QtWidgets.QDialog):
@@ -14,7 +13,14 @@ class Ui_Form(QtWidgets.QDialog):
         self.populate_ui()
 
     def create_ui(self):
-        self.setStyleSheet(PyQt5_stylesheets.load_stylesheet_pyqt5(style="style_Dark"))
+
+        # optional stylesheet
+        try:
+            import PyQt5_stylesheets
+            self.setStyleSheet(PyQt5_stylesheets.load_stylesheet_pyqt5(style="style_Dark"))
+        except ImportError:
+            pass
+        
         self.dropdown_families = QtWidgets.QComboBox()
         # self.dropdown_validators = QtWidgets.QComboBox()
         self.list_instance = QtWidgets.QListWidget()
@@ -80,7 +86,6 @@ class Ui_Form(QtWidgets.QDialog):
         self.populate_families_dropdown()
         self.populate_instances_list()
         # rerun validation plugins
-        pass
 
     def clicked_fix(self):
         # TODO run fix action on plugins that failed/warning
@@ -98,7 +103,6 @@ class Ui_Form(QtWidgets.QDialog):
         # TODO rerun validation
         # TODO update UI
         self.clicked_check()
-        pass
 
     # TODO make actions feel less hacky
     def eventFilter(self, source, event):
