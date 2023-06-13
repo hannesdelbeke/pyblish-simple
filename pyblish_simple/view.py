@@ -329,8 +329,16 @@ class Ui_Form(QtWidgets.QDialog):
 
 def show(parent=None):
     app = QtWidgets.QApplication.instance()
+
+    new_app_created = False
     if not app:
         app = QtWidgets.QApplication([])
+        new_app_created = True
+
     window = Ui_Form(parent=parent)
     window.show()
-    app.exec()
+
+    if new_app_created:
+        app.exec()
+
+    return window
