@@ -59,9 +59,9 @@ class Ui_Form(QtWidgets.QDialog):
         self.list_validators.currentItemChanged.connect(self.validator_selected)
         self.list_validators.installEventFilter(self)
 
-        font = self.textbox_validator_info.font()
-        font.setPointSize(12)
-        self.textbox_validator_info.setFont(font)
+        # font = self.textbox_validator_info.font()
+        # font.setPointSize(12)
+        # self.textbox_validator_info.setFont(font)
         self.textbox_validator_info.setReadOnly(True)
         # dont wrap text
         self.textbox_validator_info.setLineWrapMode(QtWidgets.QTextEdit.NoWrap)
@@ -255,11 +255,6 @@ class Ui_Form(QtWidgets.QDialog):
                     # todo append errors?
                     break
 
-
-
-
-        # errors = self.context.data[plugin.label]
-
         # item_data is a plugin, so the item is in the plugins list
         # elif issubclass(data, pyblish.api.InstancePlugin):
         elif issubclass(item_data, pyblish.api.InstancePlugin):
@@ -276,9 +271,6 @@ class Ui_Form(QtWidgets.QDialog):
 
                 if plugin != results_plugin:
                     continue
-
-                # if not related_instance == results_instance:
-                #     continue
 
                 has_run = True
 
