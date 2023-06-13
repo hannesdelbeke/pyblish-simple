@@ -244,11 +244,9 @@ class Ui_Form(QtWidgets.QDialog):
 
                 has_run = True
 
-                records = entry['records']
-                if records:
-                    for record in records:
-                        if record.levelname == 'WARNING':
-                            warning = True
+                for record in entry["records"]:
+                    warning |= record.levelname == "WARNING"
+                    errors |= record.levelname == "ERROR"
 
                 if not entry['success']:
                     errors = True
@@ -274,11 +272,9 @@ class Ui_Form(QtWidgets.QDialog):
 
                 has_run = True
 
-                records = result['records']
-                if records:
-                    for record in records:
-                        if record.levelname == 'WARNING':
-                            warning = True
+                for record in result["records"]:
+                    warning |= record.levelname == "WARNING"
+                    errors |= record.levelname == "ERROR"
 
                 if not result['success']:
                     errors = True
