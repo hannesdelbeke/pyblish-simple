@@ -113,7 +113,8 @@ class Ui_Form(QtWidgets.QDialog):
             for action in plugin.actions:
                 q_action = menu.addAction(action.label)
                 q_action.triggered.connect(
-                    lambda qt_checked_state, action=action, item=item: self.clicked_action(action, item))
+                    lambda action=action, item=item: self.clicked_action(pyblish_action=action, item=item)
+                )
 
             menu.exec_(event.globalPos())
             return True
