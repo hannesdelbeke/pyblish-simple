@@ -178,8 +178,8 @@ class Ui_Form(QtWidgets.QDialog):
         # hide instances by family
         for index in range(self.list_instance.count()):
             item = self.list_instance.item(index)
-            if instance.data['family'] == current_family:
             instance = item.pyblish_data
+            if instance.data['family'] == current_family:
                 item.setHidden(False)
             else:
                 item.setHidden(True)
