@@ -109,7 +109,7 @@ class Ui_Form(QtWidgets.QDialog):
 
         if event.type() == QtCore.QEvent.ContextMenu and source is self.list_validators:
             item = source.itemAt(event.pos())
-            plugin = item.data(QtCore.Qt.UserRole)
+            plugin = item.pyblish_data
             for action in plugin.actions:
                 q_action = menu.addAction(action.label)
                 q_action.triggered.connect(
@@ -122,7 +122,7 @@ class Ui_Form(QtWidgets.QDialog):
 
     # TODO make actions feel less hacky
     def clicked_action(self, pyblish_action=None, item=None):
-        plugin = item.data(QtCore.Qt.UserRole)
+        plugin = item.pyblish_data
         try:
             pyblish_action.process(self=pyblish_action, context=self.context, plugin=plugin)
         except Exception as e:
@@ -142,7 +142,7 @@ class Ui_Form(QtWidgets.QDialog):
         for instance in self.context:
             item = QtWidgets.QListWidgetItem()
             item.setText(instance.data["family"].upper() + ': ' + str(instance))
-            item.setData(QtCore.Qt.UserRole, instance)
+            item.pyblish_data = instance
             self.color_item(item, instance)
             self.list_instance.addItem(item)
 
@@ -159,7 +159,7 @@ class Ui_Form(QtWidgets.QDialog):
 
             item = QtWidgets.QListWidgetItem()
             item.setText(plugin.label)
-            item.setData(QtCore.Qt.UserRole, plugin)
+            item.pyblish_data = plugin
             self.color_item(item, selected_instance)
             self.list_validators.addItem(item)
 
@@ -178,8 +178,8 @@ class Ui_Form(QtWidgets.QDialog):
         # hide instances by family
         for index in range(self.list_instance.count()):
             item = self.list_instance.item(index)
-            instance = item.data(QtCore.Qt.UserRole)
             if instance.data['family'] == current_family:
+            instance = item.pyblish_data
                 item.setHidden(False)
             else:
                 item.setHidden(True)
@@ -191,18 +191,17 @@ class Ui_Form(QtWidgets.QDialog):
             return
 
         # # if we click on an instance, we run plugins_by_instance and fill list with match
-        selected_instance = arg.data(QtCore.Qt.UserRole)
+        selected_instance = arg.pyblish_data
         self.populate_validation_plugins_list(selected_instance)
 
     def validator_selected(self, arg=None):
         if not arg:
             return
-        selected_plugin = arg.data(QtCore.Qt.UserRole)
+        selected_plugin = arg.pyblish_data
         self.textbox_validator_info.setText(selected_plugin.__doc__)
 
     def color_item(self, item, related_instance):
-
-        item_data = item.data(QtCore.Qt.UserRole)
+        item_data = item.pyblish_data
 
         errors = False
         warning = False
@@ -211,7 +210,8 @@ class Ui_Form(QtWidgets.QDialog):
         # item_data is an instance, so the item is in the isntance list
         # parse through results because pyblish doesnt do Object Oriented results yet :(
         if type(item_data) == pyblish.plugin.Instance:
-            instance = item.data(QtCore.Qt.UserRole)
+            instance = item.pyblish_data
+
             plugins = pyblish.api.plugins_by_instance(self.plugins, instance)
             # check if all these were success.
 
