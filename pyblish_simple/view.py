@@ -1,9 +1,8 @@
-import sys
-from Qt import QtWidgets, QtCore, QtGui
 import traceback
 
-import pyblish.util
 import pyblish.api
+import pyblish.util
+from Qt import QtCore, QtGui, QtWidgets  # pylint: disable=no-name-in-module
 
 
 class Ui_Form(QtWidgets.QDialog):
@@ -108,7 +107,7 @@ class Ui_Form(QtWidgets.QDialog):
     def eventFilter(self, source, event):
         menu = QtWidgets.QMenu()
 
-        if (event.type() == QtCore.QEvent.ContextMenu and source is self.list_validators):
+        if event.type() == QtCore.QEvent.ContextMenu and source is self.list_validators:
             item = source.itemAt(event.pos())
             plugin = item.data(QtCore.Qt.UserRole)
             for action in plugin.actions:
@@ -233,7 +232,7 @@ class Ui_Form(QtWidgets.QDialog):
                 if not results_plugin:
                     continue
 
-                if not instance == results_instance:
+                if instance != results_instance:
                     continue
 
                 if results_plugin not in plugins:
