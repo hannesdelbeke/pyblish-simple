@@ -1,6 +1,9 @@
 # pyblish-simple
 A Pyblish GUI with a more artist friendly UX than [pyblish lite](https://github.com/pyblish/pyblish-lite) & [pyblish-qml](https://github.com/pyblish/pyblish-qml)
 
+## Limitations
+It was designed for validating instances, and doesn't show context, export or publish plugins.
+
 ![](/docs/screen1.jpg)
 _left pyblish_lite, right pyblish_simple_
 
@@ -8,6 +11,7 @@ _left pyblish_lite, right pyblish_simple_
 - Collected instances show on the left 
 - Select an instance to show relevant validations in the bottom right
 - Select a validation to show it's description in the top right
+- right click an instance or plugin to show it's actions in the menu.
 colors:
 - 🟢 <span style="color: green;">green</span>: the validation passed 
 - 🟠 <span style="color: orange;">orange</span>: a warning, soft fail, publishing is allowed to continue
@@ -44,6 +48,9 @@ e.g. a list of meshes in the scene, a list of materials in the scene, the outlin
 - [ ] improve the stylesheet. current dark mode doesn't look as nice as pyblish lite
 - [ ] selected color overwrites the color, which is bad UX, fix this
 - [ ] clean up the code. It's in need of some love, since it was quickly put together.
+- [ ] it was designed for validating instances, and currently assumes a standard collect, validate, export, publish workflow.
+  - [ ] research how to show context plugins
+  - [ ] research how to show export and publish plugins
 
 PR-s are welcome.
 
