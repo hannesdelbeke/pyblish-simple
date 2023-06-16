@@ -2,7 +2,7 @@
 A Pyblish GUI with a more artist friendly UX than [pyblish lite](https://github.com/pyblish/pyblish-lite) & [pyblish-qml](https://github.com/pyblish/pyblish-qml)
 
 ## Limitations
-It was designed for validating instances, and doesn't show context, export or publish plugins.
+⚠️ It was designed for validating instances, and currently doesn't show context, export or publish plugins.
 
 ![](/docs/screen1.jpg)
 _left pyblish_lite, right pyblish_simple_
