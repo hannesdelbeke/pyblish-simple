@@ -14,6 +14,16 @@ This UI is much more intuitive for 3D artists.
 - it shows only relevant info for each instance, hiding all other validations. Making the UI less overwhelming
 - It's more relatable, because a list of instances is something the 3d artist is used to. It's similar to the outliner in 3ds Max, Maya, Unreal, Unity.
 
+### how to use
+- A list of collected instances shows on the left 
+- When you select an instance, the validations that ran on this instance show on the right.
+- When you select a validation, the validation's description load's on the top right
+- color guide for validations & instances
+  - 🟢 <span style="color: green;">green</span>: the validation passed 
+  - 🟠 <span style="color: orange;">orange</span>: a warning, soft fail, publishing is allowed to continue
+  - 🔴 <span style="color: red;">red</span>: an error, hard fail, publishing is not allowed to continue
+  - ⚪ <span style="color: white;">white</span>: validation did not run
+  - ⚫ <span style="color: grey;">grey</span>: validation is disabled but registered (NOT YET IMPLEMENTED) 
 
 # install
 copy paste the pyblish_simple module, and the dependencies Qt.py & PyQt5_stylesheets in your python environment and run:
@@ -21,6 +31,8 @@ copy paste the pyblish_simple module, and the dependencies Qt.py & PyQt5_stylesh
 import pyblish_simple
 pyblish_simple.show()
 ```
+
+
 
 ### development
 Unlike the artist's experience, the Pyblish-Simple code does not claim to be intuitive.  
