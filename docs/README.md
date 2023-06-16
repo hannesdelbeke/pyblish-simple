@@ -23,5 +23,6 @@ pyblish_simple.show()
 ```
 
 ### development
-Note that unlike the artist experience, the Pyblish-Simple code does not claim to be intuitive. It's in need of some love, since it was quickly put together.
+Unlike the artist's experience, the Pyblish-Simple code does not claim to be intuitive.  
+It's in need of some love, since it was quickly put together.
 PR-s are welcome.
