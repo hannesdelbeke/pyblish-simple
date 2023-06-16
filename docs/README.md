@@ -44,6 +44,6 @@ pyblish_simple.show()
 PR-s are welcome.
 
 ## community
-- [Pyblish forum thread](https://forums.pyblish.com/t/pyblish-simple-a-new-ui-aimed-at-artists/701)https://forums.pyblish.com/t/pyblish-simple-a-new-ui-aimed-at-artists/701
+- [Pyblish forum thread](https://forums.pyblish.com/t/pyblish-simple-a-new-ui-aimed-at-artists/701)
 
 
