@@ -4,6 +4,28 @@ A Pyblish GUI with a more artist friendly UX than [pyblish lite](https://github.
 ![](/docs/screen1.jpg)
 _left pyblish_lite, right pyblish_simple_
 
+## How to use
+- Collected instances show on the left 
+- Select an instance to show relevant validations in the bottom right
+- Select a validation to show it's description in the top right
+colors:
+- 🟢 <span style="color: green;">green</span>: the validation passed 
+- 🟠 <span style="color: orange;">orange</span>: a warning, soft fail, publishing is allowed to continue
+- 🔴 <span style="color: red;">red</span>: an error, hard fail, publishing is not allowed to continue
+- ⚪ <span style="color: white;">white</span>: validation did not run
+- ⚫ <span style="color: grey;">grey</span>: validation is disabled but registered (NOT YET IMPLEMENTED) 
+
+## install
+- copy paste the pyblish_simple module
+- install the dependencies `Qt.py` & optionally `PyQt5_stylesheets`
+
+to launch the UI, run:
+```python
+import pyblish_simple
+pyblish_simple.show()
+```
+
+
 ## What's pyblish simple & why was it developed? 
 The standard UI for Pyblish confused artists:
 - it shows which validation failed, but not which instance failed.   
@@ -17,26 +39,6 @@ This UI is much more intuitive for 3D artists.
 - It's more relatable, because a list of instances is something the 3d artist is used to.  
 e.g. a list of meshes in the scene, a list of materials in the scene, the outliner in 3ds Max, Maya, Unreal, Unity, ...
 
-## How to use
-- A list of collected instances shows on the left 
-- When you select an instance, the validations that ran on this instance show on the right.
-- When you select a validation, the validation's description load's on the top right
-- color guide for validations & instances
-  - 🟢 <span style="color: green;">green</span>: the validation passed 
-  - 🟠 <span style="color: orange;">orange</span>: a warning, soft fail, publishing is allowed to continue
-  - 🔴 <span style="color: red;">red</span>: an error, hard fail, publishing is not allowed to continue
-  - ⚪ <span style="color: white;">white</span>: validation did not run
-  - ⚫ <span style="color: grey;">grey</span>: validation is disabled but registered (NOT YET IMPLEMENTED) 
-
-## install
-- copy paste the pyblish_simple module
-- install the dependencies `Qt.py` & optionally `PyQt5_stylesheets`
-
-to launch the UI, run:
-```python
-import pyblish_simple
-pyblish_simple.show()
-```
 
 ## development
 - [ ] improve the stylesheet. current dark mode doesn't look as nice as pyblish lite
