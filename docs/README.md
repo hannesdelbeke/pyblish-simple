@@ -6,9 +6,9 @@ _left pyblish_lite, right pyblish_simple_
 
 ## What's pyblish simple & why was it developed? 
 The standard UI for Pyblish confused artists:
-- The standard UI shows which validation failed, but not which instance failed.   
+- it shows which validation failed, but not which instance failed.   
 e.g. Pyblish flags that a vertex is incorrect, but not which one. The artist is frustrated, because they don't know which vertex to fix.
-- The standard UI shows a lot of info, overwhelming non-technical users. Artists don't find it intuitive.  
+- it shows a lot of info, overwhelming non-technical users. Artists don't find it intuitive.  
 
 To solve this, pyblish-simple shows a list of instances.  
 When you select an instance, it only shows the valiations that affected that instance.  
