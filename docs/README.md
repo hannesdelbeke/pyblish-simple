@@ -14,7 +14,8 @@ To solve this, pyblish-simple shows a list of instances.
 When you select an instance, it only shows the valiations that affected that instance.  
 This UI is much more intuitive for 3D artists.
 - it shows only relevant info for each instance, hiding all other validations. Making the UI less overwhelming
-- It's more relatable, because a list of instances is something the 3d artist is used to. It's similar to the outliner in 3ds Max, Maya, Unreal, Unity.
+- It's more relatable, because a list of instances is something the 3d artist is used to.  
+e.g. a list of meshes in the scene, a list of materials in the scene, the outliner in 3ds Max, Maya, Unreal, Unity, ...
 
 ## How to use
 - A list of collected instances shows on the left 
