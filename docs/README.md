@@ -21,7 +21,8 @@ colors:
 - ⚫ <span style="color: grey;">grey</span>: validation is disabled but registered (NOT YET IMPLEMENTED) 
 
 ### Devs
-- to hook up the `fix all` button: Give your plugins the attribute `fix`. Pyblish simple assumes this is a pyblish action & runs it
+- to hook up the `fix all` button: Give your plugins the attribute `fix`.  
+Pyblish simple assumes this is a pyblish action & runs it
 ```python
 # code in pyblish simple
 if hasattr(plugin, 'fix'):
