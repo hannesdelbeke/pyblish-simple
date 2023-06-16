@@ -30,7 +30,7 @@ e.g. a list of meshes in the scene, a list of materials in the scene, the outlin
 
 ## install
 - copy paste the pyblish_simple module
-- install the dependencies `Qt.py` & `PyQt5_stylesheets`
+- install the dependencies `Qt.py` & optionally `PyQt5_stylesheets`
 
 to launch the UI, run:
 ```python
