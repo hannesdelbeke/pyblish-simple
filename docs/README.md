@@ -1,13 +1,14 @@
 # pyblish-simple
-A more artist friendly Pyblish GUI (a bold claim)
+A Pyblish GUI with a more artist friendly UX
 
 ![](/docs/screen1.jpg)
 _left pyblish_lite, right pyblish_simple_
 
-## What's pyblish simple?
-[pyblish lite](https://github.com/pyblish/pyblish-lite) & [pyblish-qml](https://github.com/pyblish/pyblish-qml) can feel confusing to artists.  
-- It shows which validation failed, but not which instance. So you know a vertex is incorrect, but not which one. Good luck finding it.  
-- It shows a lot of info. , overwhelming the user. It's not intuitive.  
+## What's pyblish simple & why was it developed? 
+The standard UI for Pyblish ([pyblish lite](https://github.com/pyblish/pyblish-lite) & [pyblish-qml](https://github.com/pyblish/pyblish-qml)) confused artists:
+- The standard UI shows which validation failed, but not which instance failed.   
+e.g. Pyblish flags that a vertex is incorrect, but not which one. The artist is frustrated, because they don't know which vertex to fix.
+- The standard UI shows a lot of info, overwhelming non-technical users. Artists don't find it intuitive.  
 
 To solve this, pyblish-simple shows a list of instances.  
 When you select an instance, it only shows the valiations that affected that instance.  
