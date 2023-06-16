@@ -8,6 +8,7 @@ A Pyblish GUI with a more artist friendly UX than [pyblish lite](https://github.
 _left pyblish_lite, right pyblish_simple_
 
 ## How to use
+### Users
 - Collected instances show on the left 
 - Select an instance to show relevant validations in the bottom right
 - Select a validation to show it's description in the top right
@@ -18,6 +19,16 @@ colors:
 - 🔴 <span style="color: red;">red</span>: an error, hard fail, publishing is not allowed to continue
 - ⚪ <span style="color: white;">white</span>: validation did not run
 - ⚫ <span style="color: grey;">grey</span>: validation is disabled but registered (NOT YET IMPLEMENTED) 
+
+### Devs
+- to hook up the `fix all` button: Give your plugins the attribute `fix`. Pyblish simple assumes this is a pyblish action & runs it
+```python
+# code in pyblish simple
+if hasattr(plugin, 'fix'):
+    pyblish_action = plugin.fix
+    pyblish_action.process(self=pyblish_action, context=self.context, plugin=plugin)
+```
+- avoid context plugins, and use instance plugins instead.
 
 ## install
 - copy paste the pyblish_simple module
