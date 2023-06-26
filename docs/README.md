@@ -1,5 +1,5 @@
 # pyblish-simple
-A Pyblish GUI with a more artist friendly UX than [pyblish lite](https://github.com/pyblish/pyblish-lite) & [pyblish-qml](https://github.com/pyblish/pyblish-qml)
+A Pyblish GUI aiming for a UX that's more intuitive than [pyblish lite](https://github.com/pyblish/pyblish-lite) & [pyblish-qml](https://github.com/pyblish/pyblish-qml)
 
 ## Limitations
 ⚠️ It was designed for validating instances, and currently doesn't show context, export or publish plugins.
@@ -13,6 +13,7 @@ _left pyblish_lite, right pyblish_simple_
 - Select an instance to show relevant validations in the bottom right
 - Select a validation to show it's description in the top right
 - right click an instance or plugin to show it's actions in the menu.
+
 colors:
 - 🟢 <span style="color: green;">green</span>: the validation passed 
 - 🟠 <span style="color: orange;">orange</span>: a warning, soft fail, publishing is allowed to continue
