@@ -1,5 +1,5 @@
 # pyblish-simple
-A Pyblish GUI that's more 'intuitive' than [pyblish lite](https://github.com/pyblish/pyblish-lite) & [pyblish-qml](https://github.com/pyblish/pyblish-qml)
+A Pyblish GUI trying to be more 'intuitive' than [pyblish lite](https://github.com/pyblish/pyblish-lite) & [pyblish-qml](https://github.com/pyblish/pyblish-qml)
 
 ## Limitations
 ⚠️ It was designed for validating instances, and currently doesn't show context, export or publish plugins.
