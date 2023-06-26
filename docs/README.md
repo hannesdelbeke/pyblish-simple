@@ -16,7 +16,7 @@ _left pyblish_lite, right pyblish_simple_
 
 colors:
 - 🟢 <span style="color: green;">green</span>: the validation passed 
-- 🟠 <span style="color: orange;">orange</span>: a warning, soft fail, publishing is allowed to continue
+- 🟡 <span style="color: orange;">yellow</span>: a warning, soft fail, publishing is allowed to continue
 - 🔴 <span style="color: red;">red</span>: an error, hard fail, publishing is not allowed to continue
 - ⚪ <span style="color: white;">white</span>: validation did not run
 - ⚫ <span style="color: grey;">grey</span>: validation is disabled but registered (NOT YET IMPLEMENTED) 
