@@ -13,7 +13,7 @@ authors = [
     {name = "Hannes"},
 ]
 description = "a GUI for pyblish, to see which instance failed and why"
-readme = "README.md"
+readme = "docs/README.md"
 requires-python = ">=3.4"
 keywords = ["plugin", "pyblish", "add-on", "extension", "manager", "studio", "dcc", "app", "application", "artist"]
 #license = { file = "LICENSE" }
