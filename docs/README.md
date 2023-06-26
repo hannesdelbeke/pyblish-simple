@@ -4,7 +4,7 @@ A Pyblish GUI trying to be more 'intuitive' than [pyblish lite](https://github.c
 ## Limitations
 ⚠️ It was designed for validating instances, and currently doesn't show context, export or publish plugins.
 
-![](https://raw.githubusercontent.com/hannesdelbeke/pyblish-simple/main/docs/screen1.jpg)
+![docs/screen1.jpg](https://raw.githubusercontent.com/hannesdelbeke/pyblish-simple/main/docs/screen1.jpg)
 _left pyblish_lite, right pyblish_simple_
 
 ## How to use
