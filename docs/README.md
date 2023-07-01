@@ -3,7 +3,10 @@
 A Pyblish GUI trying to be more 'intuitive' than [pyblish lite](https://github.com/pyblish/pyblish-lite) & [pyblish-qml](https://github.com/pyblish/pyblish-qml)
 
 ## Limitations
-⚠️ It was designed for validating instances, and currently doesn't show context, export or publish plugins.
+⚠️ It was designed for validating instances, and currently doesn't show context, export or publish plugins.  
+Since it's a validator, export and publish are left out.  
+Context is left out because it's not something artists should be exposed too, since it's only used in Pyblish (It's programming voodoo).  
+You can't touch the context, you can't delete it. So showing it to artists will confuse them.  
 
 ![docs/screen1.jpg](https://raw.githubusercontent.com/hannesdelbeke/pyblish-simple/main/docs/screen1.jpg)
 _left pyblish_lite, right pyblish_simple_
