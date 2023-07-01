@@ -1,4 +1,5 @@
-# pyblish-simple
+# pyblish-simple [![PyPI](https://img.shields.io/pypi/v/pyblish-simple)](https://pypi.org/project/pyblish-simple/)
+
 A Pyblish GUI trying to be more 'intuitive' than [pyblish lite](https://github.com/pyblish/pyblish-lite) & [pyblish-qml](https://github.com/pyblish/pyblish-qml)
 
 ## Limitations
