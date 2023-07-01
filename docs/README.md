@@ -53,6 +53,11 @@ This UI is much more intuitive for 3D artists.
 - It's more relatable, because a list of instances is something the 3d artist is used to.  
 e.g. a list of meshes in the scene, a list of materials in the scene, the outliner in 3ds Max, Maya, Unreal, Unity, ...
 
+## Limitations
+⚠️ It was designed for validating instances, and currently doesn't show context, export or publish plugins.  
+Since it's a validator, export and publish are left out.  
+Context is left out because it's not something artists should be exposed too, since it's only used in Pyblish (It's programming voodoo).  
+You can't touch the context, you can't delete it. So showing it to artists will confuse them.  
 
 ## development
 - [ ] improve the stylesheet. current dark mode doesn't look as nice as pyblish lite
