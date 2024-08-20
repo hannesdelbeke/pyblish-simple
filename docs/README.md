@@ -1,7 +1,7 @@
-some bugs kept popping up
-due to the way pyblish is written it's not sustainable to maintain this.
-and i don't have the time to commit to this. 
-i believe a cleaner way is to start over, so will archive this prototype.
+some bugs kept popping up  
+due to the way pyblish is written it's not sustainable to maintain this.  
+and i don't have the time to commit to this.   
+i believe a cleaner way is to start over, so will archive this prototype.  
 
 # pyblish-simple [![PyPI](https://img.shields.io/pypi/v/pyblish-simple)](https://pypi.org/project/pyblish-simple/)
 
