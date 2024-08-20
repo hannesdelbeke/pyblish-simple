@@ -245,7 +245,7 @@ class Ui_Form(QtWidgets.QDialog):
                                     "You created a Pyblish plugin with 'class ValidateDummy(pyblish.api.Validator):'"
                                     "instead of 'class ValidateDummy(pyblish.api.InstancePlugin):'")
 
-                if not issubclass(results_plugin, pyblish.api.InstancePlugin) or not issubclass(results_plugin, pyblish.plugin.MetaPlugins):
+                if not issubclass(results_plugin, pyblish.api.InstancePlugin) or not issubclass(results_plugin, pyblish.plugin.MetaPlugin):
                     continue
 
                 has_run = True
