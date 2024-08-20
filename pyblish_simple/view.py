@@ -3,6 +3,7 @@ import traceback
 import pyblish.api
 import pyblish.util
 from Qt import QtCore, QtGui, QtWidgets  # pylint: disable=no-name-in-module
+import logging
 
 
 class Ui_Form(QtWidgets.QDialog):
@@ -239,7 +240,12 @@ class Ui_Form(QtWidgets.QDialog):
                 if results_plugin not in plugins:
                     continue
 
-                if not issubclass(results_plugin, pyblish.api.InstancePlugin):
+                if type(results_plugin) == pyblish.plugin.MetaPlugin:
+                    logging.warning("no stable support for Pyblish legacy MetaPlugins. "
+                                    "You created a Pyblish plugin with 'class ValidateDummy(pyblish.api.Validator):'"
+                                    "instead of 'class ValidateDummy(pyblish.api.InstancePlugin):'")
+
+                if not issubclass(results_plugin, pyblish.api.InstancePlugin) or not issubclass(results_plugin, pyblish.plugin.MetaPlugins):
                     continue
 
                 has_run = True
@@ -293,15 +299,24 @@ class Ui_Form(QtWidgets.QDialog):
         #     pass
 
         color = 'white'
+        square = '⬛'
         if errors:
             color = 'red'
+            square = "🟥"
         elif warning:
             color = 'orange'
+            square = "🟨"
+
         elif has_run:
             color = 'lime'
+            square = "🟩"
+
+        instance = item.pyblish_data
+        item.setText(square + instance.data["family"].upper() + ': ' + str(instance))
+
 
         # item.setBackground(QtGui.QBrush(QtGui.QColor((color))))
-        item.setForeground(QtGui.QBrush(QtGui.QColor((color))))
+        # item.setForeground(QtGui.QBrush(QtGui.QColor((color))))
         # item.setForeground(QtGui.QBrush(QtGui.QColor('white')))
 
 # # todo add this to pyblish: plugin.get_failed_instances(SELF, context)
