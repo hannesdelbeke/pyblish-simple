@@ -69,6 +69,67 @@ You can't touch the context, you can't delete it. So showing it to artists will 
 
 PR-s are welcome.
 
+a quick test
+```python
+import traceback
+import pyblish.api
+import pyblish.util
+import pyblish_simple
+from Qt import QtCore, QtGui, QtWidgets  # pylint: disable=no-name-in-module
+import logging
+
+def show(parent=None):
+    global window  # garbage collection prevention
+
+    app = QtWidgets.QApplication.instance()
+
+    new_app_created = False
+    if not app:
+        app = QtWidgets.QApplication([])
+        new_app_created = True
+
+    # // set dark mode
+    app.setStyle("Fusion")
+
+    window = Ui_Form(parent=parent)
+    window.show()
+
+
+    import pyblish_lite
+    w2 = pyblish_lite.show()
+
+
+    if new_app_created:
+        app.exec_()
+
+    return window
+
+def pyblish_test():
+    """create a instance and pyblish check for local dev testing"""
+    import pyblish.api
+
+    class CollectDummy(pyblish.api.ContextPlugin):
+        """Discover and collect available rigs into the context"""
+        order = pyblish.api.CollectorOrder
+        def process(self, context):
+            instance = context.create_instance("dummy", family="mesh")
+
+    # create a dummy validation plugin
+    class ValidateDummy(pyblish.api.InstancePlugin):
+        label = "dummy"
+        families = ["mesh"]
+        order = pyblish.api.ValidatorOrder
+        def process(self, instance):
+            assert False, "dummy error"
+
+    pyblish.api.register_plugin(CollectDummy)
+    pyblish.api.register_plugin(ValidateDummy)
+
+    show()
+
+if __name__ == '__main__':
+    pyblish_test()
+```
 ## community
 - [Pyblish forum thread](https://forums.pyblish.com/t/pyblish-simple-a-new-ui-aimed-at-artists/701)
 - PYPI https://pypi.org/project/pyblish-simple/
